@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clever Consulting — Kinshasa, RDC</title>
+  <meta name="description" content="Cabinet de conseil stratégique à Kinshasa. Accompagnement académique et entrepreneurial pour étudiants, PME et start-ups congolais."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="loading">
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- CUSTOM CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- ═══ LOADER ══════════════════════════════════ -->
+<div id="loader">
+  <div class="loader-logo">
+    <svg width="52" height="52" viewBox="0 0 100 100" fill="none">
+      <path d="M50 74 Q40 82 30 90" stroke="#D4AC42" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M50 74 Q50 84 50 94" stroke="#D4AC42" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M50 74 Q60 82 70 90" stroke="#D4AC42" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M50 74 Q35 80 25 86" stroke="#D4AC42" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+      <path d="M50 74 Q65 80 75 86" stroke="#D4AC42" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+      <rect x="47.5" y="52" width="5" height="24" rx="2.5" fill="#A07830"/>
+      <path d="M50 54 Q38 46 27 41" stroke="#D4AC42" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M50 54 Q62 46 73 41" stroke="#D4AC42" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M50 49 Q42 39 35 33" stroke="#D4AC42" stroke-width="2" stroke-linecap="round"/>
+      <path d="M50 49 Q58 39 65 33" stroke="#D4AC42" stroke-width="2" stroke-linecap="round"/>
+      <path d="M50 45 Q50 35 50 26" stroke="#D4AC42" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="50" cy="22" r="7.5" fill="#D4AC42" opacity=".9"/>
+      <circle cx="50" cy="22" r="5"   fill="#E8C96A" opacity=".7"/>
+      <circle cx="35" cy="29" r="6.5" fill="#D4AC42" opacity=".85"/>
+      <circle cx="65" cy="29" r="6.5" fill="#D4AC42" opacity=".85"/>
+      <circle cx="25" cy="23" r="5.5" fill="#D4AC42" opacity=".8"/>
+      <circle cx="75" cy="23" r="5.5" fill="#D4AC42" opacity=".8"/>
+      <circle cx="50" cy="68" r="4.5" fill="#18110A" stroke="#D4AC42" stroke-width="1.5"/>
+      <path d="M44 72 Q47 75 50 72 Q53 75 56 72" stroke="#D4AC42" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <span class="loader-brand">Clever <span>Consulting</span></span>
+  </div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <span class="loader-pct">Chargement...</span>
+</div>
+
+<!-- ═══ NAVBAR ═══════════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-brand">
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+        <path d="M50 74 Q40 82 30 90" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M50 74 Q50 84 50 94" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M50 74 Q60 82 70 90" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M50 74 Q35 80 25 86" stroke="#B8941F" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+        <path d="M50 74 Q65 80 75 86" stroke="#B8941F" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+        <rect x="47.5" y="52" width="5" height="24" rx="2.5" fill="#A07830"/>
+        <path d="M50 54 Q38 46 27 41" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M50 54 Q62 46 73 41" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M50 49 Q42 39 35 33" stroke="#B8941F" stroke-width="2" stroke-linecap="round"/>
+        <path d="M50 49 Q58 39 65 33" stroke="#B8941F" stroke-width="2" stroke-linecap="round"/>
+        <path d="M50 45 Q50 35 50 26" stroke="#B8941F" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="50" cy="22" r="7.5" fill="#B8941F" opacity=".9"/>
+        <circle cx="50" cy="22" r="5"   fill="#D4AC42" opacity=".7"/>
+        <circle cx="35" cy="29" r="6.5" fill="#B8941F" opacity=".85"/>
+        <circle cx="65" cy="29" r="6.5" fill="#B8941F" opacity=".85"/>
+        <circle cx="50" cy="68" r="4.5" fill="#FEFCF3" stroke="#B8941F" stroke-width="1.5"/>
+        <path d="M44 72 Q47 75 50 72 Q53 75 56 72" stroke="#B8941F" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="nav-brand-name">Clever</div>
+        <div class="nav-brand-sub">Consulting</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#team">Équipe</a></li>
+    </ul>
+    <a href="#services" class="nav-cta">Nos services</a>
+    <button id="hamburger" class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <a href="#about">À propos</a>
+  <a href="#services">Services</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#vision">Vision</a>
+  <a href="#team">Équipe</a>
+</div>
+
+<!-- ═══ HERO ══════════════════════════════════════ -->
+<section id="hero">
+  <canvas class="hero-canvas" id="hero-canvas"></canvas>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-label">
+          <span class="hero-label-dot"></span>
+          <span class="hero-label-text">Kinshasa, République Démocratique du Congo</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="line"><span class="word">Votre</span></span>
+          <span class="line"><span class="word">partenaire</span></span>
+          <span class="line"><span class="word gold">stratégique</span></span>
+        </h1>
+
+        <p class="hero-sub">
+          Cabinet de conseil expert en
+          <strong style="color:var(--gold);" id="hero-typed">stratégie d'entreprise</strong>
+          — nous transformons vos ambitions en résultats concrets à Kinshasa.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#services" class="btn-primary">
+            Découvrir nos services
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#about" class="btn-outline">Notre histoire</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-count="3">0</div>
+            <div class="hero-stat-label">Années d'expérience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">360°</div>
+            <div class="hero-stat-label">Vision client</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-count="7">0</div>
+            <div class="hero-stat-label">Services actifs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-logo-scene">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <svg class="hero-logo-center" width="170" height="170" viewBox="0 0 100 100" fill="none">
+            <path d="M50 74 Q40 82 30 90" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M50 74 Q50 84 50 94" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M50 74 Q60 82 70 90" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M50 74 Q35 80 25 86" stroke="#B8941F" stroke-width="1.5" stroke-linecap="round" opacity=".65"/>
+            <path d="M50 74 Q65 80 75 86" stroke="#B8941F" stroke-width="1.5" stroke-linecap="round" opacity=".65"/>
+            <rect x="47.5" y="52" width="5" height="24" rx="2.5" fill="#A07830"/>
+            <path d="M50 54 Q38 46 27 41" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M50 54 Q62 46 73 41" stroke="#B8941F" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M50 49 Q42 39 35 33" stroke="#B8941F" stroke-width="2" stroke-linecap="round"/>
+            <path d="M50 49 Q58 39 65 33" stroke="#B8941F" stroke-width="2" stroke-linecap="round"/>
+            <path d="M50 45 Q50 35 50 26" stroke="#B8941F" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M27 41 Q21 37 17 32" stroke="#B8941F" stroke-width="1.5" stroke-linecap="round" opacity=".75"/>
+            <path d="M73 41 Q79 37 83 32" stroke="#B8941F" stroke-width="1.5" stroke-linecap="round" opacity=".75"/>
+            <circle cx="50" cy="22" r="7.5" fill="#B8941F" opacity=".9"/>
+            <circle cx="50" cy="22" r="5"   fill="#D4AC42" opacity=".7"/>
+            <circle cx="35" cy="29" r="6.5" fill="#B8941F" opacity=".85"/>
+            <circle cx="65" cy="29" r="6.5" fill="#B8941F" opacity=".85"/>
+            <circle cx="25" cy="23" r="5.5" fill="#B8941F" opacity=".8"/>
+            <circle cx="75" cy="23" r="5.5" fill="#B8941F" opacity=".8"/>
+            <circle cx="17" cy="30" r="5"   fill="#B8941F" opacity=".7"/>
+            <circle cx="83" cy="30" r="5"   fill="#B8941F" opacity=".7"/>
+            <circle cx="50" cy="68" r="4.5" fill="#FEFCF3" stroke="#B8941F" stroke-width="1.5"/>
+            <path d="M44 72 Q47 75 50 72 Q53 75 56 72" stroke="#B8941F" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div class="hero-pill pill-1">
+            <span class="hero-pill-dot"></span>Fondé en 2023
+          </div>
+          <div class="hero-pill pill-2">Cabinet actif · Kinshasa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Défiler</span>
+    <div style="width:22px;height:36px;border:2px solid rgba(184,148,31,.35);border-radius:11px;display:flex;align-items:flex-start;justify-content:center;padding-top:6px;margin-top:6px;">
+      <div style="width:3px;height:8px;border-radius:2px;background:var(--gold);animation:scroll-dot 1.6s ease-in-out infinite;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ════════════════════════════════════ -->
+<div id="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>Rédaction Scientifique</span><span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><span>Conception Business</span><span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><span>Stratégie de Croissance</span><span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><span>Tests Anti-Plagiat</span><span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><span>Restructuration des Process</span><span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><span>Business Intelligence</span><span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><span>Analyse de Marché</span><span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><span>Pilotage de Projet</span><span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><span>SWOT Offensif</span><span class="marquee-sep">✦</span></div>
+    <div class="marquee-item"><span>Vente de Projet</span><span class="marquee-sep">✦</span></div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ══════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="label rv">Notre histoire</span>
+      <h2 class="section-title rv d1">Des racines <span>profondes</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text rv-l">
+        <p>Née le <strong>19 Février 2023</strong> d'une association entre deux étudiants de l'UPC, Clever Consulting a été fondée pour répondre aux besoins des étudiants en matière de rédaction de travaux de fin de cycle.</p>
+        <p>Au fil de 3 années d'expérience, la structure a évolué pour devenir <strong>Clever Consulting</strong> — une start-up innovante dotée d'une vision multisectorielle et d'une ambition forte : transformer Kinshasa par l'excellence stratégique.</p>
+        <p>Notre proposition de valeur : faciliter la croissance, améliorer les process et épanouir nos clients — <em>sans discrimination de genre ni d'appartenance sociale.</em></p>
+        <div class="about-quote">
+          <p>"De l'inconfort récurrent à une situation améliorée — c'est la promesse au cœur de chaque mission Clever Consulting."</p>
+        </div>
+      </div>
+      <div class="stats-block rv-r">
+        <div class="stat-card rv">
+          <div class="val" data-count="3">0</div>
+          <div class="lbl">Années d'expérience</div>
+        </div>
+        <div class="stat-card rv d1">
+          <div class="val">2023</div>
+          <div class="lbl">Année de fondation</div>
+        </div>
+        <div class="stat-card rv d2">
+          <div class="val">360°</div>
+          <div class="lbl">Vision client</div>
+        </div>
+        <div class="stat-card rv d3">
+          <div class="val" data-count="2">0</div>
+          <div class="lbl">Axes stratégiques</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-band rv d2">
+      <div class="mission-band-label"><span class="label">Notre mission</span></div>
+      <p>Accompagner la croissance des <span>étudiants</span> et des <span>entrepreneurs</span> congolais en leur apportant des solutions malignes pour transformer leur peur de l'inconnu en réussite certaine.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="label rv">Ce que nous faisons</span>
+      <h2 class="section-title rv d1">Nos <span>services</span></h2>
+      <p class="section-desc rv d2">Un panel complet pour accompagner étudiants et entrepreneurs vers la réussite.</p>
+    </div>
+
+    <div class="services-scroll">
+      <div class="service-card rv">
+        <div class="service-num">01</div>
+        <span class="service-tag">Académique</span>
+        <h3>Rédaction scientifique</h3>
+        <p>Conception et rédaction de travaux scientifiques de qualité supérieure pour étudiants et chercheurs.</p>
+        <div class="service-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card rv d1">
+        <div class="service-num">02</div>
+        <span class="service-tag">Qualité</span>
+        <h3>Tests anti-plagiat</h3>
+        <p>Application rigoureuse des outils de détection pour garantir l'originalité et la conformité de vos travaux.</p>
+        <div class="service-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card rv d2">
+        <div class="service-num">03</div>
+        <span class="service-tag">Entrepreneurial</span>
+        <h3>Conception business</h3>
+        <p>Élaboration complète de business plans, modèles économiques et stratégies de lancement de projets.</p>
+        <div class="service-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card rv d3">
+        <div class="service-num">04</div>
+        <span class="service-tag">Commercial</span>
+        <h3>Vente de projet</h3>
+        <p>Structuration et présentation de vos projets pour convaincre investisseurs et partenaires stratégiques.</p>
+        <div class="service-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card rv">
+        <div class="service-num">05</div>
+        <span class="service-tag">Analyse</span>
+        <h3>Enquêtes approfondies</h3>
+        <p>Conduite d'enquêtes sectorielles, analyses de marché et études de terrain rigoureuses.</p>
+        <div class="service-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card rv d1">
+        <div class="service-num">06</div>
+        <span class="service-tag">Documentation</span>
+        <h3>Rapports d'enquêtes</h3>
+        <p>Rédaction de rapports d'analyses clairs, structurés et exploitables pour la prise de décision.</p>
+        <div class="service-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+      <div class="service-card rv d2">
+        <div class="service-num">07</div>
+        <span class="service-tag">Optimisation</span>
+        <h3>Restructuration des process</h3>
+        <p>Réorganisation et optimisation des processus internes inhérents à votre projet ou activité.</p>
+        <div class="service-arrow"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+      </div>
+    </div>
+
+    <div class="future-wrap rv d3">
+      <div class="future-title">Sur le moyen &amp; <span>long terme</span></div>
+      <div class="future-grid">
+        <div class="future-item">
+          <h4>Formations de renforcement</h4>
+          <p>Programmes de renforcement des capacités adaptés à vos besoins spécifiques.</p>
+        </div>
+        <div class="future-item">
+          <h4>Conseil en rentabilité</h4>
+          <p>Stratégies avancées d'optimisation de la rentabilité de votre activité sur le long terme.</p>
+        </div>
+        <div class="future-item">
+          <h4>Pilotage de projet</h4>
+          <p>Accompagnement opérationnel dans la conduite de vos projets les plus ambitieux.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NUMBERS ══════════════════════════════════ -->
+<section id="numbers" style="padding:0;">
+  <div class="numbers-grid">
+    <div class="number-item rv">
+      <div class="number-val" data-count="3">0</div>
+      <div class="number-lbl">Années d'expérience</div>
+    </div>
+    <div class="number-val-wrap number-item rv d1">
+      <div class="number-val" data-count="7">0</div>
+      <div class="number-lbl">Services actifs</div>
+    </div>
+    <div class="number-item rv d2">
+      <div class="number-val" data-count="13">0</div>
+      <div class="number-lbl">Membres de l'équipe</div>
+    </div>
+    <div class="number-item rv d3">
+      <div class="number-val" data-count="2">0</div>
+      <div class="number-lbl">Axes d'intervention</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPERTISE ═══════════════════════════════════ -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-header">
+      <span class="label rv">Notre savoir-faire</span>
+      <h2 class="section-title rv d1">Domaines <span>d'expertise</span></h2>
+    </div>
+
+    <div class="exp-tabs rv d2">
+      <button class="exp-tab active" data-tab="croissance">Stratégie de Croissance</button>
+      <button class="exp-tab" data-tab="restructuration">Stratégie de Restructuration</button>
+    </div>
+
+    <div class="exp-panel active" data-panel="croissance">
+      <div class="exp-main">
+        <span class="label">Positionnement</span>
+        <h3>Stratège Implémenteur</h3>
+        <p>Lancement de nouveaux produits, pénétration de nouveaux marchés et business model innovant. L'idée est de matérialiser le risque ou le coût de l'opportunité et d'identifier des leviers supplémentaires de croissance sur le long terme.</p>
+        <div class="pillars-label">Piliers de l'offre</div>
+        <div class="pillars-grid">
+          <div class="pillar"><span class="pillar-dot"></span>Élargissement de la taille de marché</div>
+          <div class="pillar"><span class="pillar-dot"></span>Innovation de l'offre (Design Thinking)</div>
+          <div class="pillar"><span class="pillar-dot"></span>Business développement</div>
+          <div class="pillar"><span class="pillar-dot"></span>Analyse des barrières à l'entrée</div>
+        </div>
+      </div>
+      <div class="exp-meta">
+        <div class="meta-card">
+          <div class="meta-lbl"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Cible</div>
+          <div class="meta-val">PME arrivées à maturité · Start-ups</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-lbl"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg>Durée</div>
+          <div class="meta-val">Mission longue — 7 mois à 2 ans</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-lbl"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Vitesse d'action</div>
+          <div class="meta-val">Planifiée — en quelques semaines ou mois</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-lbl"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-10"/></svg>Revenus</div>
+          <div class="meta-val">Revenu constant sur le long terme</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-panel" data-panel="restructuration">
+      <div class="exp-main">
+        <span class="label">Positionnement</span>
+        <h3>Data Driven</h3>
+        <p>Stabiliser les opérations du client en apportant des options nouvelles aux problèmes internes. Transformer l'urgence en opportunité. Ouvrir les portes d'une reconstruction du projet en un modèle de rentabilité long terme.</p>
+        <div class="pillars-label">Piliers de l'offre</div>
+        <div class="pillars-grid">
+          <div class="pillar"><span class="pillar-dot"></span>Identification des points de rupture</div>
+          <div class="pillar"><span class="pillar-dot"></span>Analyse des flux de trésorerie</div>
+          <div class="pillar"><span class="pillar-dot"></span>Ingénierie de restructuration</div>
+          <div class="pillar"><span class="pillar-dot"></span>Optimisation coût-rentabilité</div>
+        </div>
+      </div>
+      <div class="exp-meta">
+        <div class="meta-card">
+          <div class="meta-lbl"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Cible</div>
+          <div class="meta-val">PME · Start-ups sous-performantes · TPE · Particuliers</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-lbl"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg>Durée</div>
+          <div class="meta-val">Mission courte — 2 à 6 mois</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-lbl"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Vitesse d'action</div>
+          <div class="meta-val">Immédiate — en quelques heures</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-lbl"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-10"/></svg>Revenus</div>
+          <div class="meta-val">Entrée rapide, honoraires élevés (risque fort)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="domains-wrap">
+      <div class="domains-title rv">Nos domaines de compétences</div>
+      <div class="domains-grid">
+        <div class="domain-card rv"><div class="domain-line"></div><p>Analyse des conditions de réussite ou d'échec d'un projet</p></div>
+        <div class="domain-card rv d1"><div class="domain-line"></div><p>Analyse des données clients</p></div>
+        <div class="domain-card rv d2"><div class="domain-line"></div><p>Détection de failles internes</p></div>
+        <div class="domain-card rv d3"><div class="domain-line"></div><p>Radiographie du positionnement concurrentiel</p></div>
+        <div class="domain-card rv"><div class="domain-line"></div><p>Détection des faiblesses actuelles (Pain Points)</p></div>
+        <div class="domain-card rv d1"><div class="domain-line"></div><p>Création de structures SWOT offensif</p></div>
+        <div class="domain-card rv d2"><div class="domain-line"></div><p>Apport d'une réelle direction stratégique</p></div>
+        <div class="domain-card rv d3"><div class="domain-line"></div><p>Création de documents intuitifs et précis</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VISION ══════════════════════════════════════ -->
+<section id="vision">
+  <div class="container">
+    <span class="label rv">Notre ambition</span>
+    <h2 class="vision-title rv d1">Devenir l'acteur <span>clé</span><br>du conseil à <span>Kinshasa</span></h2>
+    <p class="vision-desc rv d2">Nous développons une vision <strong>360° des projets de nos clients</strong> pour leur permettre de visualiser leurs résultats futurs, réduire les résistances au changement et augmenter significativement le pourcentage de réussite.</p>
+
+    <div class="vision-cards">
+      <div class="vision-card rv">
+        <div class="vision-card-bar"></div>
+        <h3>Étudiants</h3>
+        <p>Futurs créateurs d'emplois, accompagnés dans leurs travaux académiques et leurs premiers projets d'entreprise.</p>
+      </div>
+      <div class="vision-card rv d2">
+        <div class="vision-card-bar"></div>
+        <h3>PME &amp; TPE</h3>
+        <p>Entrepreneurs congolais désireux d'accroître la rentabilité de leur activité et de se formaliser durablement.</p>
+      </div>
+      <div class="vision-card rv d4">
+        <div class="vision-card-bar"></div>
+        <h3>Start-ups</h3>
+        <p>Projets en croissance cherchant une accélération structurée et une vision stratégique à long terme.</p>
+      </div>
+    </div>
+
+    <div class="vision-quote rv d3">
+      <div class="vision-q-mark">"</div>
+      <p class="vision-q-text">Orienter la création de valeur pour le client en optant pour une vision 360° de son projet tout en permettant à ce dernier de visualiser les résultats futurs encourus suite à nos séances de diagnostic.</p>
+      <div class="vision-q-line"><span>Notre engagement</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEAM ════════════════════════════════════════ -->
+<section id="team">
+  <div class="container">
+    <div class="section-header">
+      <span class="label rv">Les visages derrière</span>
+      <h2 class="section-title rv d1">Notre <span>équipe</span></h2>
+      <p class="section-desc rv d2">Des profils diversifiés, unis par une même ambition : faire de votre projet une réussite certaine.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card rv"><div class="team-avatar">DK</div><div class="name">Dan Kilese N'sa Ntor</div><div class="role">CEO</div><div class="dept">Direction Générale</div></div>
+      <div class="team-card rv d1"><div class="team-avatar">JW</div><div class="name">Junior Walumbuka</div><div class="role">DAF</div><div class="dept">Administration &amp; Finances</div></div>
+      <div class="team-card rv d2"><div class="team-avatar">LN</div><div class="name">Lesli Nzeba</div><div class="role">DAF Adjoint</div><div class="dept">Administration &amp; Finances</div></div>
+      <div class="team-card rv d3"><div class="team-avatar">CN</div><div class="name">Célestin Nkuba</div><div class="role">RQC</div><div class="dept">Qualité &amp; Conformité</div></div>
+      <div class="team-card rv d4"><div class="team-avatar">JK</div><div class="name">John Kadima</div><div class="role">RQC Adjoint</div><div class="dept">Qualité &amp; Conformité</div></div>
+      <div class="team-card rv"><div class="team-avatar">CM</div><div class="name">Chadrack Mobeke</div><div class="role">Chef de Département</div><div class="dept">R&amp;D</div></div>
+      <div class="team-card rv d1"><div class="team-avatar">CL</div><div class="name">Célestin Luhumbu Wa-Ongombe</div><div class="role">Data Science Manager</div><div class="dept">R&amp;D</div></div>
+      <div class="team-card rv d2"><div class="team-avatar">BM</div><div class="name">Bavon Mukanya Kanda</div><div class="role">Knowledge Manager</div><div class="dept">R&amp;D</div></div>
+      <div class="team-card rv d3"><div class="team-avatar">SB</div><div class="name">Sam Bangila</div><div class="role">Méthodologue</div><div class="dept">R&amp;D</div></div>
+      <div class="team-card rv d4"><div class="team-avatar">CH</div><div class="name">Christelle</div><div class="role">Analyste de données</div><div class="dept">R&amp;D</div></div>
+      <div class="team-card rv"><div class="team-avatar">MK</div><div class="name">Manassé Kalaka Mwamba</div><div class="role">Chef de Département</div><div class="dept">Juridique</div></div>
+      <div class="team-card rv d1"><div class="team-avatar">CK</div><div class="name">Crédo Kadilo Kabengele</div><div class="role">Chef Adjoint</div><div class="dept">Juridique</div></div>
+      <div class="team-card rv d2"><div class="team-avatar">GN</div><div class="name">Gracia Ndongala</div><div class="role">Secrétaire</div><div class="dept">Administration</div></div>
+    </div>
+    <div class="team-note rv d3">Structure organisée autour de <strong>5 pôles</strong> — Direction · Finances · Qualité · R&amp;D · Juridique</div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="f-brand">
+        <div class="f-brand-name">Clever</div>
+        <div class="f-brand-sub">Consulting</div>
+        <p>Votre accompagnateur stratégique pour transformer l'inconfort en réussite certaine à Kinshasa.</p>
+        <div class="f-loc"><span class="f-loc-dot"></span>Kinshasa, République Démocratique du Congo</div>
+      </div>
+      <div class="f-col">
+        <div class="f-col-title">Services</div>
+        <ul>
+          <li><a href="#services">Rédaction scientifique</a></li>
+          <li><a href="#services">Tests anti-plagiat</a></li>
+          <li><a href="#services">Conception business</a></li>
+          <li><a href="#services">Enquêtes approfondies</a></li>
+          <li><a href="#services">Restructuration des process</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-title">Expertise</div>
+        <ul>
+          <li><a href="#expertise">Stratégie de Croissance</a></li>
+          <li><a href="#expertise">Stratégie de Restructuration</a></li>
+          <li><a href="#expertise">SWOT Offensif</a></li>
+          <li><a href="#expertise">Business Intelligence</a></li>
+          <li><a href="#expertise">Analyse des données</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-title">À propos</div>
+        <ul>
+          <li><a href="#about">Notre histoire</a></li>
+          <li><a href="#vision">Notre vision</a></li>
+          <li><a href="#team">Notre équipe</a></li>
+          <li><a href="#about">Nos valeurs</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-cta">
+      <div>
+        <h3>Prêt à transformer votre projet ?</h3>
+        <p>Contactez-nous pour un diagnostic gratuit de vos besoins.</p>
+      </div>
+      <a href="#services" class="btn-primary">Démarrer maintenant <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Clever Consulting. Tous droits réservés.</div>
+      <div class="footer-powered">
+        Propulsé par
+        <a href="https://cognito-inc.ca" target="_blank" rel="noopener noreferrer">
+          Cognito Inc.
+          <svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+@keyframes scroll-dot { 0%{opacity:1;transform:translateY(0)} 80%{opacity:0;transform:translateY(10px)} 100%{opacity:0} }
+</style>
+<script src="script.js"></script>
+</body>
+</html>
