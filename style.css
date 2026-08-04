@@ -97,6 +97,16 @@ body.cursor-text #cursor-ring {
   transform: translateY(20px);
   animation: loader-in .8s .2s cubic-bezier(.34,1.56,.64,1) forwards;
 }
+.loader-logo-mark {
+  height: 64px;
+  width: auto;
+  filter: drop-shadow(0 0 18px rgba(212,172,66,.45));
+  animation: loader-mark-pulse 2.2s ease-in-out infinite;
+}
+@keyframes loader-mark-pulse {
+  0%,100% { transform: scale(1); filter: drop-shadow(0 0 18px rgba(212,172,66,.45)); }
+  50%     { transform: scale(1.06); filter: drop-shadow(0 0 28px rgba(212,172,66,.7)); }
+}
 .loader-brand {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
@@ -151,6 +161,13 @@ body.cursor-text #cursor-ring {
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 .nav-brand  { display: flex; align-items: center; gap: 12px; text-decoration: none; cursor: none; }
+.nav-logo-mark {
+  height: 42px;
+  width: auto;
+  transition: transform .35s cubic-bezier(.22,1,.36,1), filter .35s;
+  filter: drop-shadow(0 2px 6px rgba(184,148,31,.25));
+}
+.nav-brand:hover .nav-logo-mark { transform: scale(1.08) rotate(-4deg); filter: drop-shadow(0 4px 14px rgba(184,148,31,.45)); }
 .nav-brand-name {
   font-family: 'Playfair Display', serif;
   font-size: 20px; font-weight: 700;
@@ -330,7 +347,7 @@ body.cursor-text #cursor-ring {
   background: var(--gold-2); top: -4.5px; left: 50%; transform: translateX(-50%);
   box-shadow: 0 0 10px var(--gold);
 }
-.hero-logo-center { position: relative; z-index: 2; animation: float-logo 5s ease-in-out infinite; filter: drop-shadow(0 16px 40px rgba(184,148,31,.35)); }
+.hero-logo-center { position: relative; z-index: 2; height: 190px; width: auto; animation: float-logo 5s ease-in-out infinite; filter: drop-shadow(0 16px 40px rgba(184,148,31,.35)); }
 .hero-pill {
   position: absolute; background: var(--white); border-radius: 100px;
   border: 1px solid rgba(184,148,31,.2); box-shadow: 0 8px 32px rgba(184,148,31,.18);
@@ -659,8 +676,7 @@ footer::after {
   pointer-events:none;
 }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-.f-brand-name { font-family:'Playfair Display',serif; font-size: 24px; font-weight: 700; color: var(--white); }
-.f-brand-sub { font-size: 10px; font-weight: 600; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.f-brand-logo { height: 62px; width: auto; margin-bottom: 20px; filter: drop-shadow(0 4px 16px rgba(184,148,31,.25)); }
 .f-brand p { font-size: 14px; line-height: 1.75; margin-bottom: 16px; }
 .f-loc { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: rgba(255,255,255,.4); }
 .f-loc-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse-dot 2s infinite; }
