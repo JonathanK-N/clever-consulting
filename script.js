@@ -317,7 +317,28 @@ if (scrollInd) {
     if (match) serviceSelect.value = titre;
   }
 
-  form.addEventListener('submit', e => {
+  const toast = document.getElementById('cform-toast');
+
+  function sendViaMailto(name, email, phone, service, message) {
+    const subject = `Demande de contact${service ? ' — ' + service : ''} — ${name}`;
+    const bodyLines = [
+      `Nom : ${name}`,
+      `Email : ${email}`,
+      phone ? `Téléphone : ${phone}` : null,
+      service ? `Service concerné : ${service}` : null,
+      '',
+      'Message :',
+      message
+    ].filter(Boolean);
+    const mailto = `mailto:contact@cleverconsult.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    if (toast) {
+      toast.textContent = '✓ Ouverture de votre client mail avec la demande pré-remplie...';
+      toast.classList.add('show');
+    }
+    window.location.href = mailto;
+  }
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const name    = document.getElementById('cf-name').value.trim();
     const email   = document.getElementById('cf-email').value.trim();
@@ -330,21 +351,39 @@ if (scrollInd) {
       return;
     }
 
-    const subject = `Demande de contact${service ? ' — ' + service : ''} — ${name}`;
-    const bodyLines = [
-      `Nom : ${name}`,
-      `Email : ${email}`,
-      phone ? `Téléphone : ${phone}` : null,
-      service ? `Service concerné : ${service}` : null,
-      '',
-      'Message :',
-      message
-    ].filter(Boolean);
-    const mailto = `mailto:contact@cleverconsult.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    const submitBtn = form.querySelector('.cform-submit');
+    const originalHTML = submitBtn ? submitBtn.innerHTML : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '.6';
+      submitBtn.innerHTML = 'Envoi en cours…';
+    }
 
-    const toast = document.getElementById('cform-toast');
-    if (toast) toast.classList.add('show');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, service, message }),
+      });
+      const data = await res.json().catch(() => ({}));
 
-    window.location.href = mailto;
+      if (res.ok && data.ok) {
+        if (toast) {
+          toast.textContent = '✓ Message envoyé avec succès. Nous revenons vers vous sous 24h ouvrées.';
+          toast.classList.add('show');
+        }
+        form.reset();
+      } else {
+        sendViaMailto(name, email, phone, service, message);
+      }
+    } catch (err) {
+      sendViaMailto(name, email, phone, service, message);
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '';
+        submitBtn.innerHTML = originalHTML;
+      }
+    }
   });
 })();
