@@ -303,3 +303,48 @@ if (scrollInd) {
     scrollInd.style.pointerEvents = window.scrollY > 80 ? 'none' : 'auto';
   }, { passive: true });
 }
+
+/* ─── CONTACT FORM (contact.html) ────────────── */
+(function() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  const serviceSelect = document.getElementById('cf-service');
+  const params = new URLSearchParams(window.location.search);
+  const titre = params.get('titre');
+  if (titre && serviceSelect) {
+    const match = Array.from(serviceSelect.options).find(o => o.value === titre);
+    if (match) serviceSelect.value = titre;
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name    = document.getElementById('cf-name').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const phone   = document.getElementById('cf-phone').value.trim();
+    const service = serviceSelect ? serviceSelect.value : '';
+    const message = document.getElementById('cf-message').value.trim();
+
+    if (!name || !email || !message) {
+      form.reportValidity();
+      return;
+    }
+
+    const subject = `Demande de contact${service ? ' — ' + service : ''} — ${name}`;
+    const bodyLines = [
+      `Nom : ${name}`,
+      `Email : ${email}`,
+      phone ? `Téléphone : ${phone}` : null,
+      service ? `Service concerné : ${service}` : null,
+      '',
+      'Message :',
+      message
+    ].filter(Boolean);
+    const mailto = `mailto:contact@cleverconsult.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+    const toast = document.getElementById('cform-toast');
+    if (toast) toast.classList.add('show');
+
+    window.location.href = mailto;
+  });
+})();
